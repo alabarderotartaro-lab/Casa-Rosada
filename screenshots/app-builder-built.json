@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "El Mandato",
+      "hasCanvas": false,
+      "bodyTextLen": 823,
+      "bodyTextHash": "57709b5b859bc6ed072e701ef9d6f12ba10964a782f88ff80d8d11a735840680",
+      "bodyTextPrefix": "PRESIDENCIA DE LA NACIÓN El Mandato Dos mandatos de cuatro años.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "El Mandato",
+      "hasCanvas": false,
+      "bodyTextLen": 823,
+      "bodyTextHash": "57709b5b859bc6ed072e701ef9d6f12ba10964a782f88ff80d8d11a735840680",
+      "bodyTextPrefix": "PRESIDENCIA DE LA NACIÓN El Mandato Dos mandatos de cuatro años.",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

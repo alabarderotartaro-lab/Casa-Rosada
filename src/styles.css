@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans: "Outfit", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --color-navy: #0b1c2c;
+  --color-navy-2: #12263a;
+  --color-navy-3: #1a344c;
+  --color-celeste: #74acdf;
+  --color-celeste-deep: #1a4a73;
+  --color-mist: #c5ddf0;
+  --color-paper: #f4f8fc;
+  --color-muted: #8aa7c2;
+  --color-subtle: #5c7a96;
+  --color-good: #6b9e8a;
+  --color-bad: #b85c6a;
+  --color-bg: #0b1c2c;
+  --color-surface: #12263a;
+  --color-fg: #f4f8fc;
+  --color-primary: #74acdf;
+  --color-primary-fg: #0b1c2c;
+  --color-border: rgba(244, 248, 252, 0.12);
+
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+    font-family: var(--font-display);
+  }
+  p {
+    text-wrap: pretty;
+  }
+  body {
+    background: var(--color-navy);
+    color: var(--color-paper);
+    font-family: var(--font-sans);
+  }
+}
+
+.flag-ribbon {
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    #74acdf 0%,
+    #74acdf 33%,
+    #f4f8fc 33%,
+    #f4f8fc 66%,
+    #74acdf 66%,
+    #74acdf 100%
+  );
+}
+
+.flag-wash {
+  background: linear-gradient(180deg, #74acdf 0%, #eaf4fb 48%, #74acdf 100%);
+}
+
+@keyframes enter-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes flash-good {
+  35% {
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-good) 80%, transparent);
+  }
+}
+
+@keyframes flash-bad {
+  20% {
+    box-shadow: 0 0 0 2px color-mix(in oklab, var(--color-bad) 80%, transparent);
+    transform: translateX(-2px);
+  }
+  40% {
+    transform: translateX(2px);
+  }
+}
+
+@keyframes medal-spin {
+  from {
+    transform: rotateY(0deg) scale(0.72);
+  }
+  55% {
+    transform: rotateY(380deg) scale(1.06);
+  }
+  to {
+    transform: rotateY(360deg) scale(1);
+  }
+}
+
+.anim-enter {
+  animation: enter-up 280ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.stat-flash-up {
+  animation: flash-good 620ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.stat-flash-down {
+  animation: flash-bad 480ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.medal-3d {
+  perspective: 640px;
+}
+.medal-3d img {
+  transform-style: preserve-3d;
+  animation: medal-spin 1.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-enter,
+  .stat-flash-up,
+  .stat-flash-down,
+  .medal-3d img {
+    animation: none !important;
+  }
+}
